@@ -21,7 +21,7 @@ import java.util.Optional;
 @Service
 public class SchoolService {
 
-    private static final String DEPARTMENT_REST_ENDPOINT = "http://localhost:8091/api/department/";
+    private static final String DEPARTMENT_REST_ENDPOINT = "http://department-service/api/department/";
 
     @Autowired
     SchoolRepository schoolrepository;
@@ -39,7 +39,7 @@ public class SchoolService {
                 .board(schoolRequest.getBoard())
                 .build();
         schoolrepository.save(s);
-        return "School created successfully.";
+        return "School created successfully";
     }
 
     public String createSchoolAndDepartment(SchoolRequest schoolRequest) {
@@ -62,10 +62,10 @@ public class SchoolService {
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(DEPARTMENT_REST_ENDPOINT + "create", departmentRequest, String.class);
         String message = responseEntity.getBody();
 
-        if (StringUtils.isNotBlank(message) && message.contains("Department created successfully.")) {
+        if (StringUtils.isNotBlank(message) && message.equals("Department created successfully")) {
             return "Both school and department created successfully.";
         } else
-            return "School and department insertion issue.";
+            return "School and department insertion issue";
     }
 
     public List<SchoolResponse> getAllSchools() {
