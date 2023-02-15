@@ -78,11 +78,7 @@ class SchoolApplicationTests {
 
 	@Test
 	void createSchoolAndDepartmentTimeoutScenario() {
-
-		String s = "Department not created successfully";
-
 		when(schoolRepository.save(any())).thenThrow(new RuntimeException("Timeout while connecting to db"));
-		//when(restTemplate.postForEntity(anyString(),any(),any())).thenReturn(new ResponseEntity<>(s,HttpStatus.OK));
 		var school = new SchoolRequest();
 		school.setDeptName("MPC");
 		school.setName("Talent");
