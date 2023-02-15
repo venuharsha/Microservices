@@ -11,13 +11,10 @@ public class SchoolResponse {
 
     private String id;
 
-    @NonNull
     private String name;
 
-    @NonNull
     private String location;
 
-    @NonNull
     private String board;
 
     private String deptName;

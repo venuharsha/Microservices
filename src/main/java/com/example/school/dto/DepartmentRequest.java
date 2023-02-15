@@ -11,10 +11,9 @@ import java.util.Date;
 public class DepartmentRequest {
 
     private String id;
-    @NonNull
+
     private String deptName;
 
-    @NonNull
     private String deptHead;
 
     private Date createdDate;

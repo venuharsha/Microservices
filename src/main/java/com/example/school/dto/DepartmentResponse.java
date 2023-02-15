@@ -12,9 +12,7 @@ public class DepartmentResponse {
     @Id
     private String deptId;
 
-    @NonNull
     private String deptName;
 
-    @NonNull
     private String deptHead;
 }

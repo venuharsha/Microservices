@@ -1,18 +1,19 @@
 package com.example.school.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SchoolRequest {
 
-    @NonNull
     private String name;
 
-    @NonNull
     private String location;
 
-    @NonNull
     private String board;
 
     private String deptName;
