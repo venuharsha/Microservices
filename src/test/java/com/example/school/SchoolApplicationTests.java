@@ -82,7 +82,7 @@ class SchoolApplicationTests {
 		var school = new SchoolRequest();
 		school.setDeptName("MPC");
 		school.setName("Talent");
-		String message = schoolService.createSchoolAndDepartment(school);
+		schoolService.createSchoolAndDepartment(school);
 	}
 
 	@Test
