@@ -50,11 +50,13 @@ public class SchoolService {
                 .name(schoolRequest.getName())
                 .location(schoolRequest.getLocation())
                 .board(schoolRequest.getBoard())
+                .deptName(schoolRequest.getDeptName())
+                .deptHead(schoolRequest.getDeptHead())
                 .build();
         schoolrepository.save(s2);
 
         DepartmentRequest departmentRequest = DepartmentRequest.builder()
-                .id(id)
+                .deptId(id)
                 .deptName(schoolRequest.getDeptName())
                 .deptHead(schoolRequest.getDeptHead())
                 .build();
@@ -63,7 +65,7 @@ public class SchoolService {
         String message = responseEntity.getBody();
 
         if (StringUtils.isNotBlank(message) && message.equals("Department created successfully")) {
-            return "Both school and department created successfully.";
+            return "Both school and department created successfully";
         } else
             return "School and department insertion issue";
     }
@@ -111,6 +113,7 @@ public class SchoolService {
                 .name(s3.getName())
                 .location(s3.getLocation())
                 .board(s3.getBoard())
+                .deptId(departmentResponse.getDeptId())
                 .deptName(departmentResponse.getDeptName())
                 .deptHead(departmentResponse.getDeptHead())
                 .build();
@@ -135,7 +138,7 @@ public class SchoolService {
 //
 //            assert departmentResponse != null;
 //            return mapSchoolAndDepartmentResponse(schoolResponseList, departmentResponse);
-//        } else throw new SchoolNotFoundException("School not found for given name: ");
+//        } else throw new SchoolNotFoundException("School and department not found for given name: " + name);
 //    }
 
 }

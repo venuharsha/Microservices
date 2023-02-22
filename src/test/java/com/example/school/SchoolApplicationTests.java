@@ -43,7 +43,7 @@ class SchoolApplicationTests {
 	void createSchool() {
 		doNothing().when(schoolRepository.save(any()));
 		var school = new SchoolRequest();
-		school.setName("Talent");
+		school.setName("Talent1");
 		String message = schoolService.createSchool(school);
 		assertEquals("School created successfully", message);
 	}
@@ -58,7 +58,7 @@ class SchoolApplicationTests {
 		school.setDeptName("MPC");
 		school.setName("Talent");
 		String message = schoolService.createSchoolAndDepartment(school);
-		assertEquals("Both school and department created successfully.", message);
+		assertEquals("Both school and department created successfully", message);
 	}
 
 	@Test

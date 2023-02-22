@@ -9,7 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 public class DepartmentResponse {
 
-    @Id
     private String deptId;
 
     private String deptName;

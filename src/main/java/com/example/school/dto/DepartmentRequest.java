@@ -10,11 +10,10 @@ import java.util.Date;
 @Builder
 public class DepartmentRequest {
 
-    private String id;
+    private String deptId;
 
     private String deptName;
 
     private String deptHead;
 
-    private Date createdDate;
 }

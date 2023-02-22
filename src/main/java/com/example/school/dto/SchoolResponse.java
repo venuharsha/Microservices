@@ -17,6 +17,8 @@ public class SchoolResponse {
 
     private String board;
 
+    private String deptId;
+
     private String deptName;
 
     private String deptHead;
